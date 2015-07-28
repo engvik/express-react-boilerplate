@@ -2,9 +2,15 @@
   "name": "express-react-rethink-es6",
   "description": "Node Express, React, RethinkDB, ES6 super basic boilerplate.",
   "version": "0.0.1",
+  "homepage": "https://github.com/engvik/express-react-rethink-es6/",
+  "author": {
+    "name": "Lars Jansøn Engvik",
+    "email": "lars@engvik.nu",
+    "homepage": "https://github.com/engvik"
+  },
   "repository": {
     "type": "git",
-    "url": "git://notyet.git"
+    "url": "https://github.com/engvik/express-react-rethink-es6.git"
   },
   "engines": {
     "node": "0.12.7"
