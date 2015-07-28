@@ -1,0 +1,29 @@
+{
+  "name": "express-react-rethink-es6",
+  "description": "Node Express, React, RethinkDB, ES6 super basic boilerplate.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://notyet.git"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "dependencies": {
+    "body-parser": "1.13.2",
+    "convict": "0.8.2",
+    "express": "4.13.1",
+    "react": "0.13.3",
+    "rethinkdb": "2.0.2",
+    "winston": "1.0.1"
+  },
+  "devDependencies": {
+    "babel": "5.8.9",
+    "babelify": "6.1.3",
+    "browserify": "11.0.0",
+    "gulp": "3.9.0"
+  },
+  "scripts": {
+    "start": "node dist/app.js"
+  }
+}
