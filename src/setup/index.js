@@ -34,11 +34,7 @@ module.exports.setupDBConnection = function(app, config) {
 module.exports.createRoutes = function(app) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
-
-    app.get('/', function(req, res) {
-        res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-    });
-
+    app.use(express.static(path.join(__dirname, '../..', 'public')));
     app.use('/api', require('../routes/api'));
 };
 

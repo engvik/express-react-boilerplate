@@ -1,6 +1,6 @@
-'use strict';
+require('./stylesheets/main.scss');
 
-var React = require('react');
+const React = require('react');
 
 class App extends React.Component {
     render() {

@@ -1,5 +1,3 @@
-'use strict';
-
 const config = require('./config');
 const setup = require('./setup');
 const winston = require('winston');
