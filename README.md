@@ -5,7 +5,6 @@ A very basic boilerplate for an isomorphic app using Express, React and RethinkD
 
     git clone git@github.com:engvik/express-react-rethink-es6.git
     npm install
-    gulp build
     npm start
 
 ## Environment variables
