@@ -40,7 +40,7 @@ module.exports.handleExpressErrors = (app) => {
     });
 
     app.use((err, req, res) => {
-        winston.debug(config.get('appname') + ':express-error', err.stack);
+        winston.debug(config.get('appname'), 'Express:' + err.stack);
         res.status(500).send('Something broke!');
     });
 };

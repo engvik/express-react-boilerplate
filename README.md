@@ -8,6 +8,7 @@ Different databases boilerplates are found in branches.
 * [Database support](https://github.com/engvik/express-react-boilerplate#database-support)
 * [Environment variables](https://github.com/engvik/express-react-boilerplate#environment-variables)
   * [RethinkDB](https://github.com/engvik/express-react-boilerplate#rethinkdb-environment-variables)
+  * [MongoDB](https://github.com/engvik/express-react-boilerplate#mongodb-environment-variables)
 
 ## Install, build and run
 
@@ -19,6 +20,7 @@ Different databases boilerplates are found in branches.
     
 ## Database support
 * RethinkDB ([db/rethink](https://github.com/engvik/express-react-boilerplate/tree/db/rethink)) ([Environment vars](https://github.com/engvik/express-react-boilerplate#rethinkdb-environment-variables))
+* MongoDB ([db/mongo](https://github.com/engvik/express-react-boilerplate/tree/db/mongo)) ([Environment vars](https://github.com/engvik/express-react-boilerplate#mongodb-environment-variables))
 
 ## Environment variables
 * `PORT`
@@ -26,4 +28,8 @@ Different databases boilerplates are found in branches.
 
 ### RethinkDB environment variables
 * `RETHINK_URL`
-* `REHINK_PORT`
+* `RETHINK_PORT`
+
+### MongoDB environment variables
+* `MONGO_URL`
+* `MONGO_PORT`
