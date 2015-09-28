@@ -18,7 +18,7 @@ module.exports.createExpressApp = (config) => {
     return app;
 };
 
-module.exports.setupDBConnection = function(config) {
+module.exports.setupDBConnection = (config) => {
     const connection = mongoose.createConnection(config.get('mongoUrl'));
 
     connection.on('open', () => {
@@ -32,7 +32,7 @@ module.exports.setupDBConnection = function(config) {
     return connection;
 }
 
-module.exports.createRoutes = function(app, db) {
+module.exports.createRoutes = (app, db) => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, '../..', 'public')));
