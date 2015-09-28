@@ -22,11 +22,11 @@ module.exports.setupDBConnection = (config) => {
     const connection = mongoose.createConnection(config.get('mongoUrl'));
 
     connection.on('open', () => {
-        winston.debug(config.get('appname'), 'MonogDB: ' + config.get('mongoUrl') + ':' + config.get('mongoPort'));
+        winston.debug(config.get('appname'), 'MongoDB: ' + config.get('mongoUrl') + ':' + config.get('mongoPort'));
     });
 
     connection.on('error', (err) => {
-        winston.debug(config.get('appname'), 'MonogDB: ' + err);
+        winston.debug(config.get('appname'), 'MongoDB: ' + err);
     });
     
     return connection;
