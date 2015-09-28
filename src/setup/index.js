@@ -19,8 +19,8 @@ module.exports.createExpressApp = (config) => {
 };
 
 
-module.exports.setupDBConnection = function(app, config) {
-    r.connect({host: config.get('rethinkUrl'), port: config.get('rethinkPort')}, function(err, conn) {
+module.exports.setupDBConnection = (app, config) => {
+    r.connect({host: config.get('rethinkUrl'), port: config.get('rethinkPort')}, (err, conn) => {
         if (err) {
             return winston.debug(config.get('appname') + ':setup', err);
         }
