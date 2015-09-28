@@ -32,7 +32,7 @@ module.exports.setupDBConnection = (app, config) => {
     });
 }
 
-module.exports.createRoutes = function(app) {
+module.exports.createRoutes = (app) => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, '../..', 'public')));
