@@ -17,6 +17,18 @@ const config = module.exports = convict({
         format: 'port',
         default: 3000,
         env: 'PORT'
+    },
+    mongoUrl: {
+        doc: 'MongoDB URL',
+        format: 'url',
+        default: 'localhost',
+        env: 'MONGO_URL'
+    },
+    mongoPort: {
+        doc: 'MongoDB port',
+        format: 'port',
+        default: 27017,
+        env: 'MONGO_PORT'
     }
 });
 

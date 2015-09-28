@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
 const winston = require('winston');
 
@@ -17,7 +18,21 @@ module.exports.createExpressApp = (config) => {
     return app;
 };
 
-module.exports.createRoutes = (app) => {
+module.exports.setupDBConnection = function(config) {
+    const connection = mongoose.createConnection(config.get('mongoUrl'));
+
+    connection.on('open', () => {
+        winston.debug(config.get('appname'), 'MonogDB: ' + config.get('mongoUrl') + ':' + config.get('mongoPort'));
+    });
+
+    connection.on('error', (err) => {
+        winston.debug(config.get('appname'), 'MonogDB: ' + err);
+    });
+    
+    return connection;
+}
+
+module.exports.createRoutes = function(app, db) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, '../..', 'public')));
