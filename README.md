@@ -14,7 +14,7 @@ Different databases boilerplates are found in branches.
 
     git clone git@github.com:engvik/express-react-boilerplate.git
     cd express-react-boilerplate
-    git merge origin/db/<database> // example: git merge origin/db/mongo
+    git checkout db/<database> // example: git checkout db/mongo
     npm install
     npm start
     
