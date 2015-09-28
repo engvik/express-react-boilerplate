@@ -7,8 +7,10 @@ Different databases boilerplates are found in branches.
 * [Install, build and run](https://github.com/engvik/express-react-boilerplate#install-build-and-run)
 * [Database support](https://github.com/engvik/express-react-boilerplate#database-support)
 * [Environment variables](https://github.com/engvik/express-react-boilerplate#environment-variables)
-  * [RethinkDB](https://github.com/engvik/express-react-boilerplate#rethinkdb-environment-variables)
-  * [MongoDB](https://github.com/engvik/express-react-boilerplate#mongodb-environment-variables)
+* [Database specific environment variables](https://github.com/engvik/express-react-boilerplate#database-specific-environment-variables)
+  * [RethinkDB](https://github.com/engvik/express-react-boilerplate#rethinkdb)
+  * [MongoDB](https://github.com/engvik/express-react-boilerplate#mongodb)
+  * [MySQL](https://github.com/engvik/express-react-boilerplate#mysql)
 
 ## Install, build and run
 
@@ -19,17 +21,26 @@ Different databases boilerplates are found in branches.
     npm start
     
 ## Database support
-* RethinkDB ([db/rethink](https://github.com/engvik/express-react-boilerplate/tree/db/rethink)) ([Environment vars](https://github.com/engvik/express-react-boilerplate#rethinkdb-environment-variables))
-* MongoDB ([db/mongo](https://github.com/engvik/express-react-boilerplate/tree/db/mongo)) ([Environment vars](https://github.com/engvik/express-react-boilerplate#mongodb-environment-variables))
+* RethinkDB ([db/rethink](https://github.com/engvik/express-react-boilerplate/tree/db/rethink)) ([Environment vars](https://github.com/engvik/express-react-boilerplate#rethinkdb))
+* MongoDB ([db/mongo](https://github.com/engvik/express-react-boilerplate/tree/db/mongo)) ([Environment vars](https://github.com/engvik/express-react-boilerplate#mongodb))
+* MySQL ([db/mysql](https://github.com/engvik/express-react-boilerplate/tree/db/mysql)) ([Environment vars](https://github.com/engvik/express-react-boilerplate#mysql))
 
 ## Environment variables
 * `PORT`
 * `NODE_ENV`
 
-### RethinkDB environment variables
+## Database specific environment variables
+
+### RethinkDB
 * `RETHINK_URL`
 * `RETHINK_PORT`
 
-### MongoDB environment variables
+### MongoDB
 * `MONGO_URL`
 * `MONGO_PORT`
+
+### MySQL
+* `MYSQL_HOST`
+* `MONGO_USERNAME`
+* `MONGO_PASSWORD`
+* `MONGO_DATABASE`
