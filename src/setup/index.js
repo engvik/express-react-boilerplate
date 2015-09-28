@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const mysql = require('mysql');
 const path = require('path');
 const winston = require('winston');
 
@@ -17,7 +18,26 @@ module.exports.createExpressApp = (config) => {
     return app;
 };
 
-module.exports.createRoutes = (app) => {
+module.exports.setupDBConnection = (config) => {
+    const connection = mysql.createConnection({
+        host: config.get('mysqlHost'),
+        user: config.get('mysqlUser'),
+        password: config.get('mysqlPassword'),
+        database: config.get('mysqlDatabase')
+    });
+
+    connection.connect((err) => {
+        if (err) {
+            return winston.debug(config.get('appname'), 'MySQL: ' + err);
+        }
+
+        winston.debug(config.get('appname'), 'MySQL: ' + config.get('mysqlHost') + '/' + config.get('mysqlDatabase'));
+    });
+
+    return connection;
+}
+
+module.exports.createRoutes = (app, db) => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, '../..', 'public')));

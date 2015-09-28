@@ -17,6 +17,27 @@ const config = module.exports = convict({
         format: 'port',
         default: 3000,
         env: 'PORT'
+    },
+    mysqlHost: {
+        doc: 'MySQL Host',
+        format: 'url',
+        default: 'localhost',
+        env: 'MYSQL_HOST'
+    },
+    mysqlUser: {
+        doc: 'MySQL user',
+        format: 'username',
+        env: 'MYSQL_USER'
+    },
+    mysqlPassword: {
+        doc: 'MySQL password',
+        format: 'password',
+        env: 'MYSQL_PASSWORD'
+    },
+    mysqlDatabase: {
+        doc: 'MySQL database',
+        format: 'datbase',
+        env: 'MYSQL_DATABASE'
     }
 });
 
