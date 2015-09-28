@@ -17,18 +17,6 @@ const config = module.exports = convict({
         format: 'port',
         default: 3000,
         env: 'PORT'
-    },
-    rethinkUrl: {
-        doc: 'RethinkDB URL',
-        format: 'url',
-        default: 'localhost',
-        env: 'REHINK_URL'
-    },
-    rethinkPort: {
-        doc: 'RethinkDB client port',
-        format: 'port',
-        default: 28015,
-        env: 'RETHINK_PORT'
     }
 });
 

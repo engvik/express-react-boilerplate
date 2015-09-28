@@ -1,7 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
-const r = require('rethinkdb');
 const winston = require('winston');
 
 module.exports.createExpressApp = function(config) {
@@ -17,19 +16,6 @@ module.exports.createExpressApp = function(config) {
 
     return app;
 };
-
-module.exports.setupDBConnection = function(app, config) {
-    r.connect({host: config.get('rethinkUrl'), port: config.get('rethinkPort')}, function(err, conn) {
-        if (err) {
-            return winston.debug(config.get('appname') + ':setup', err);
-        }
-
-        winston.debug(config.get('appname'), 'RethinkDB: ' + conn.host + ':' + conn.port);
-        app._rdbConn = conn;
-
-        winston.debug(config.get('appname'), 'Remember to create DB tables');
-    });
-}
 
 module.exports.createRoutes = function(app) {
     app.use(bodyParser.json());
