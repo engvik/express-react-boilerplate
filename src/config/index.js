@@ -5,7 +5,7 @@ const winston = require('winston');
 winston.level = 'debug';
 
 const config = module.exports = convict({
-    appname: 'express-react-rethink-es6',
+    appname: 'express-react-boilerplate',
     env: {
         doc: 'The application environment.',
         format: ['production', 'development'],

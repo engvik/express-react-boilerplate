@@ -3,13 +3,13 @@ const express = require('express');
 const path = require('path');
 const winston = require('winston');
 
-module.exports.createExpressApp = function(config) {
+module.exports.createExpressApp = (config) => {
     const app = express();
 
     app.use(express.static(path.join(__dirname, '..', 'public')));
     app.set('port', config.get('port'));
 
-    app.use(function(req, res, next) {
+    app.use((req, res, next) => {
         winston.debug(config.get('appname') + req.method, req.originalUrl);
         next();
     });
@@ -17,15 +17,15 @@ module.exports.createExpressApp = function(config) {
     return app;
 };
 
-module.exports.createRoutes = function(app) {
+module.exports.createRoutes = (app) => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, '../..', 'public')));
     app.use('/api', require('../routes/api'));
 };
 
-module.exports.handleExpressErrors = function(app) {
-    app.use(function(req, res) {
+module.exports.handleExpressErrors = (app) => {
+    app.use((req, res) => {
         res.status(404);
 
         if (req.accepts('html')) {
@@ -39,7 +39,7 @@ module.exports.handleExpressErrors = function(app) {
         res.type('txt').send('404');
     });
 
-    app.use(function(err, req, res) {
+    app.use((err, req, res) => {
         winston.debug(config.get('appname') + ':express-error', err.stack);
         res.status(500).send('Something broke!');
     });
