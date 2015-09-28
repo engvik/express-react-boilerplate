@@ -4,6 +4,7 @@ const winston = require('winston');
 
 let app = setup.createExpressApp(config);
 
+setup.setupDBConnection(app, config);
 setup.createRoutes(app);
 setup.handleExpressErrors(app);
 

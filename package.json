@@ -26,6 +26,7 @@
     "extract-text-webpack-plugin": "0.8.2",
     "node-sass": "3.3.2",
     "react": "0.13.3",
+    "rethinkdb": "2.1.1",
     "sass-loader": "2.0.1",
     "webpack": "1.12.1",
     "winston": "1.0.1"
